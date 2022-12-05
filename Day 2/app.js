@@ -1,3 +1,8 @@
+const menuContainer = document.getElementById("menu")
+const cartContainer = document.getElementById("cart")
+
+
+
 const menuItems = [
     {
         name: 'French Fries with Ketchup',
@@ -42,3 +47,18 @@ const menuItems = [
         count: 0
     }
 ]
+
+let shoppingCart = []
+
+function render(){
+    menuContainer.innerHTML = `<p>test menu here</p>`
+    cartContainer.innerHTML = `shopping cart here`
+    menuItems.map((menuItem) =>{
+        console.log(menuItem)
+    })
+}
+
+function menuItemHTML(menuItem){
+
+}
+render()
