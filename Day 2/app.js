@@ -51,14 +51,23 @@ const menuItems = [
 let shoppingCart = []
 
 function render(){
+    let menuHTML = ""
     menuContainer.innerHTML = `<p>test menu here</p>`
     cartContainer.innerHTML = `shopping cart here`
     menuItems.map((menuItem) =>{
-        console.log(menuItem)
+        menuHTML+=menuItemHTML(menuItem)
     })
+    menuContainer.innerHTML = menuHTML
 }
 
-function menuItemHTML(menuItem){
+function menuItemHTML(item){
+    return `
+    <li>
+        <div>
+        <p>${item.name}</p>
+        </div>
+    </li>
+    `
 
 }
 render()
