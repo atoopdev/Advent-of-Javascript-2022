@@ -61,6 +61,14 @@ function render(){
 }
 
 function menuItemHTML(item){
+    let priceCurrency = new Intl.NumberFormat('en-US', 
+    {
+        style: 'currency',
+        currency: 'USD',
+    })
+    // divide by 100 to move decimal place
+    const price = priceCurrency.format(item.price/100)
+    console.log(price)
     return `
     <li>
         <div class="plate">
@@ -69,12 +77,13 @@ function menuItemHTML(item){
         
         <div class="content">
         <p class="menu-item">${item.name}</p>
-        <p class="price">${item.price}</p>
+        <p class="price">${price}</p>
         <button class="add">Add to Cart</button>
         </div>
     </li>
     `
 
 }
+
 
 render()
